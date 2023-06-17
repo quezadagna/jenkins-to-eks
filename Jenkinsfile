@@ -7,7 +7,7 @@ pipeline {
         AWS_SECRET_ACCESS_KEY="${credentials_PSW}"
         AWS_DEFAULT_REGION='us-east-1'
         AWS_REPO_ECR='255091851557.dkr.ecr.us-east-1.amazonaws.com'
-        IMAGE_TAG: 1.1
+        IMAGE_TAG= 1.1
         IMAGE_NAME="banco-ripley-prueba"
         AWS_CLUSTER_NAME='bripley-eks-cluster'
  
