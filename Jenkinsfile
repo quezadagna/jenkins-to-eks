@@ -49,7 +49,7 @@ pipeline {
                         sh """
                         {
                            sudo aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | sudo docker login --username AWS --password-stdin ${AWS_REPO_ECR}
-                           sudo docker push ${AWS_REPO_ECR}:${IMAGE_NAME}:${IMAGE_TAG}
+                           sudo docker push ${AWS_REPO_ECR}/${IMAGE_NAME}:${IMAGE_TAG}
                         }
                         """
                         // Subir la imagen Docker al registro de contenedores de AWS
