@@ -66,16 +66,10 @@ pipeline {
                         sh """
 
                         echo "######### Apply Deployment / Service #########"
-                        aws eks --region ${AWS_DEFAULT_REGION} update-kubeconfig --name ${AWS_CLUSTER_NAME}
-                        kubectl apply -f kubernetes/deployment.yaml
-                        kubectl apply -f kubernetes/service.yaml
+                        sudo aws eks --region ${AWS_DEFAULT_REGION} update-kubeconfig --name ${AWS_CLUSTER_NAME}
+                        sudo kubectl apply -f kubernetes/deployment.yaml
+                        sudo kubectl apply -f kubernetes/service.yaml
 
-
-                        echo "######## Deployment List ##########"
-                        kubectl get pod -n ${namespace}
-
-                        echo "######### Service List #########"
-                        kubectl get svc -n ${namespace}
                     """
                 }
             }
