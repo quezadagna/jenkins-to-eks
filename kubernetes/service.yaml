@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: prueba
+  name: banco-ripley-prueba
 spec:
   selector:
-    app: prueba
+    app: banco-ripley-prueba
   ports:
     - protocol: TCP
       port: 80

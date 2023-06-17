@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prueba
+  name: banco-ripley-prueba
   labels:
-    app: prueba
+    app: banco-ripley-prueba
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: prueba
+      app: banco-ripley-prueba
   template:
     metadata:
       labels:
-        app: prueba
+        app: banco-ripley-prueba
     spec:
       containers:
-        - name: prueba
+        - name: banco-ripley-prueba
           image: 255091851557.dkr.ecr.us-east-1.amazonaws.com/banco-ripley-prueba:1.1
           imagePullPolicy: Always
           ports:
