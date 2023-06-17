@@ -46,7 +46,7 @@ pipeline {
                 
                     // Autenticación en el registro de contenedores de AWS
                     withAWS(credentials: 'jenkins-ec2-deployer') {
-                        sh 'aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_REPO_ECR}'
+                        sh 'sudo aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | sudo docker login --username AWS --password-stdin ${AWS_REPO_ECR}'
                         // Subir la imagen Docker al registro de contenedores de AWS
                         docker.withRegistry('${AWS_REPO_ECR}', credentials: 'jenkins-ec2-deployer') {
                         docker.image(imageName).push()
