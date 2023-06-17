@@ -1,5 +1,5 @@
 pipeline {
-    agent { node { label 'Cimo' } }
+    agent any
     
     environment {
         credentials = credentials('jenkins-ec2-deployer');
