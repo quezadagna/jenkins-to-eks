@@ -15,7 +15,7 @@ spec:
         app: banco-ripley-prueba
     spec:
       containers:
-        - name: banco-ripley-prueba
+        - name: bancoripley-prueba
           image: 255091851557.dkr.ecr.us-east-1.amazonaws.com/banco-ripley-prueba:1.1
           imagePullPolicy: Always
           ports:
