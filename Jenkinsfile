@@ -41,7 +41,8 @@ pipeline {
                     def dockerfile = "Dockerfile"
                     
                     // Construir la imagen Docker
-                    docker.build(imageName, "-f ${dockerfile} .")
+                    // docker.build(imageName, "-f ${dockerfile} .")
+                    sh 'docker build -t ${imageName} -f ${dockerfile} .'
                 
                     // Autenticación en el registro de contenedores de AWS
                     withAWS(credentials: 'jenkins-ec2-deployer') {
